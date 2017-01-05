@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
       // Split a string by colon
       $sentences = explode(":", $text);
       // Forecast the weather
-      if ($sentences[0] == "อากาศ") {
+      if ($sentences[0] === "อากาศ") {
         $url_weather = "http://api.wunderground.com/api/152abfcd8a423756/forecast/q/Thailand/" . str_replace(' ', '%20', $sentences[1]).'.json');
         $json_weather = file_get_contents($url_weather);
         $parsed_weather = json_decode($json_weather, true);
