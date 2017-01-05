@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
       $sentences = explode(":", $text);
       // Forecast the weather
       if ($sentences[0] == "อากาศ") {
-        $url_weather = "http://api.wunderground.com/api/152abfcd8a423756/forecast/lang:TH/q/Thailand/" . str_replace(' ', '%20', $sentences[1]).'.json');
+        /*$url_weather = "http://api.wunderground.com/api/152abfcd8a423756/forecast/lang:TH/q/Thailand/" . str_replace(' ', '%20', $sentences[1]).'.json');
         $json_weather = file_get_contents($url_weather);
         $parsed_weather = json_decode($json_weather, true);
         $location = $parsed_json->{'location'}->{'city'};
@@ -33,7 +33,8 @@ if (!is_null($events['events'])) {
           $text = "Current temperature in ${location} is: ${temp_c}\n";
         } else {
           $text = "Not found";
-        }
+        }*/
+        $text = $sentences[1];
       }
 
       // Build message to reply back
