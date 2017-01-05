@@ -24,11 +24,12 @@ if (!is_null($events['events'])) {
       // Forecast the weather
       if ($sentences[0] == "อากาศ") {
         $url_weather = "http://api.wunderground.com/api/152abfcd8a423756/forecast/q/Thailand/" . str_replace(' ', '%20', $sentences[1]) . '.json';
-        $json_weather = file_get_contents($url_weather);
-        $parsed_weather = json_decode($json_weather, true);
-        $location = $parsed_json->{'location'}->{'city'};
-        $temp_c = $parsed_json->{'current_observation'}->{'temp_c'};
-        $text = "Current temperature in ${location} is: ${temp_c}\n";
+        // $json_weather = file_get_contents($url_weather);
+        // $parsed_weather = json_decode($json_weather, true);
+        // $location = $parsed_json->{'location'}->{'city'};
+        // $temp_c = $parsed_json->{'current_observation'}->{'temp_c'};
+        // $text = "Current temperature in ${location} is: ${temp_c}\r\n";
+        $text = "อากาศ";
       }
 
       // Build message to reply back
